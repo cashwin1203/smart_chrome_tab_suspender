@@ -6,12 +6,12 @@ A lightweight, modern Manifest V3 Chrome Extension that automatically suspends i
 
 ## Features
 
-- 💤 **Auto-Suspension**: Automatically suspends tabs that have been inactive for a set duration (default: 2 minutes) to free up RAM.
-- 🎯 **Per-Tab Active Tracking**: Intelligently tracks last-active times individually per tab and across multiple windows so your currently active tabs are never suspended.
-- 🧹 **Storage Leak Prevention**: Instantly cleans up internal metadata when tabs are closed.
-- 🎨 **Premium Aesthetic UI**: Suspended tabs display a beautiful dark-mode glassmorphic interface showing the tab's original favicon and page title.
-- ⚡ **Double-Safe Restoration**: Instantly reload/restore the tab by either clicking the **Restore Tab** button, clicking anywhere on the page, or simply returning to the tab.
-- 🔄 **Clean History**: Uses history-safe redirection to prevent cluttering your browser's back/forward history.
+- **Auto-Suspension**: Automatically suspends tabs that have been inactive for a set duration (default: 2 minutes) to free up RAM.
+- **Per-Tab Active Tracking**: Intelligently tracks last-active times individually per tab and across multiple windows so your currently active tabs are never suspended.
+- **Storage Leak Prevention**: Instantly cleans up internal metadata when tabs are closed.
+- **Premium Aesthetic UI**: Suspended tabs display a beautiful dark-mode glassmorphic interface showing the tab's original favicon and page title.
+- **Double-Safe Restoration**: Instantly reload/restore the tab by either clicking the **Restore Tab** button, clicking anywhere on the page, or simply returning to the tab.
+- **Clean History**: Uses history-safe redirection to prevent cluttering your browser's back/forward history.
 
 ---
 
