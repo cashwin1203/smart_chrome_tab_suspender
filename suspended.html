@@ -1,34 +1,147 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Suspended</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tab Suspended</title>
   <link id="favicon" rel="icon" href="">
   <style>
+    :root {
+      --bg-gradient: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+      --card-bg: rgba(30, 41, 59, 0.4);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --accent-color: #3b82f6;
+      --accent-hover: #2563eb;
+      --accent-glow: rgba(59, 130, 246, 0.4);
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-primary);
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
+      overflow: hidden;
+      user-select: none;
     }
-    .box {
+
+    .container {
       text-align: center;
-      padding: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 3rem 2.5rem;
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      max-width: 480px;
+      width: 90%;
+      animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .icon-container {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1.5rem;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .favicon-icon {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .favicon-fallback {
+      display: inline;
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 0.75rem 0;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+
+    .info-text {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin: 0 0 2rem 0;
+      line-height: 1.5;
+    }
+
+    .restore-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #ffffff;
+      background: var(--accent-color);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px var(--accent-glow);
+    }
+
+    .restore-btn:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--accent-glow);
+    }
+
+    .restore-btn:active {
+      transform: translateY(0);
+    }
+
+    .hint-text {
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.3);
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>Tab Suspended</h2>
-    <p>Click the tab to restore</p>
+  <div class="container">
+    <div class="icon-container">
+      <img id="page-favicon" class="favicon-icon" src="" alt="" style="display: none;">
+      <span id="favicon-fallback" class="favicon-fallback">💤</span>
+    </div>
+    <h2 id="page-title">Tab Suspended</h2>
+    <p class="info-text">This tab was suspended to free up memory and keep your computer running smoothly.</p>
+    <button id="restore-btn" class="restore-btn">Restore Tab</button>
+    <p class="hint-text">Or click anywhere on the page to restore</p>
   </div>
 
-  <script src="suspended.js"></script>
+  <script src="suspend.js"></script>
 </body>
 </html>

@@ -4,10 +4,9 @@
     "name": "Tab Suspender",
     "version": "1.0",
     "description": "Automatically suspends inactive tabs to save memory.",
-    "permissions": ["tabs", "storage"],
+    "permissions": ["tabs", "storage","alarms","contextMenus"],
     "background": {
-        "scripts": ["background.js"],
-       
+        "service_worker": "background.js"
     },
     "action":{}
 }
